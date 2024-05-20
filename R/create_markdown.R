@@ -10,4 +10,5 @@ create_markdown <- function(input_path, output_path){
   df[2, 2:ncol(df)] <- 50
 
   write_xlsx(df, output_path)
+
 }
