@@ -11,4 +11,22 @@ create_markdown <- function(input_path, output_path){
 
   write_xlsx(df, output_path)
 
+  march_c_value <- as.numeric(df[df$Variables == "C", "March"])
+  april_c_value <- as.numeric(df[df$Variables == "C", "April"])
+
+
+  params <- list(
+    parameter1 = march_c_value,
+    parameter2 = april_c_value
+  )
+
+  rmdFilename <- system.file("rmd", "testing.rmd", package = "BCtest")
+
+  word_filename <- gsub(".rmd$", ".doc", rmdFilename)
+
+  rmarkdown::render(input =rmdFilename, output_file = word_filename, params = params, envir =  new.env())
+
+  browseURL(word_filename)
+
+
 }

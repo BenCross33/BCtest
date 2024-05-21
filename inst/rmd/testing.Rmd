@@ -1,0 +1,21 @@
+---
+title: "testing"
+output: word_document
+params:
+  parameter1: "socialcare_20231010"
+  parameter2: "socialcare_20231005"
+---
+
+```{r setup, include=FALSE}
+# Load required libraries
+library(dplyr)
+
+
+Cmarch <- params$parameter1
+CApril <- params$parameter2
+ 
+```
+
+###Testing
+
+In march the number for C was `Cmarch`, in April it was `CApril`.
