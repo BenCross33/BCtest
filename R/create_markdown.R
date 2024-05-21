@@ -22,7 +22,7 @@ create_markdown <- function(input_path, output_path){
 
   rmdFilename <- system.file("rmd", "testing.rmd", package = "BCtest")
 
-  word_filename <- gsub(".rmd$", ".doc", rmdFilename)
+  word_filename <- gsub(".Rmd$", ".doc", rmdFilename)
 
   rmarkdown::render(input =rmdFilename, output_file = word_filename, params = params, envir =  new.env())
 

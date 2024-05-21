@@ -2,8 +2,8 @@
 title: "testing"
 output: word_document
 params:
-  parameter1: "socialcare_20231010"
-  parameter2: "socialcare_20231005"
+  parameter1: ""
+  parameter2: ""
 ---
 
 ```{r setup, include=FALSE}
@@ -11,11 +11,12 @@ params:
 library(dplyr)
 
 
-Cmarch <- params$parameter1
+CMarch <- params$parameter1
 CApril <- params$parameter2
  
 ```
 
 ###Testing
 
-In march the number for C was `Cmarch`, in April it was `CApril`.
+In March the number for C was `r CMarch`, in April it was `r CApril`, this is an increase of
+`r ((CApril - CMarch)/CApril) * 100`%.
