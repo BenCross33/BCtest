@@ -7,16 +7,12 @@ params:
 ---
 
 ```{r setup, include=FALSE}
-# Load required libraries
-library(dplyr)
+change_type <- ifelse(params$parameter2 >= params$parameter1, "an increase", "a decrease")
 
-
-CMarch <- params$parameter1
-CApril <- params$parameter2
  
 ```
 
 ###Testing
 
-In March the number for C was `r CMarch`, in April it was `r CApril`, this is an increase of
-`r ((CApril - CMarch)/CApril) * 100`%.
+In March the number for C was `r params$parameter1`, in April it was `r params$parameter2`, this is `r change_type` of
+`r abs(((params$parameter2 - params$parameter1)/ params$parameter2) * 100)`%.
